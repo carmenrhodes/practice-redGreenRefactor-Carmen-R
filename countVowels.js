@@ -20,10 +20,14 @@ module.exports = { countVowels }
 
 function countVowels(str) {
     if (typeof str !== 'string') return 0;
-  
-    return [...str.toLowerCase()].filter(char => "aeiou".includes(char)).length;
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    return str
+      .toLowerCase()
+      .split('')
+      .filter(char => vowels.includes(char))
+      .length;
   }
 
-console.log(countVowels('abcdefg'));
+// console.log(countVowels('abcdefg'));
 
 module.exports = { countVowels }
